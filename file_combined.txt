@@ -1,0 +1,161 @@
+testing gfikledlkcfhjalkfhlka
+am rajesh adding new line
+#!/bin/bash
+
+#6! = 6*5*4*3*2*1
+
+a=6
+temp=1
+for (( i=1; i<=$a; i++ ))
+do
+  temp=$((temp*i))
+done
+echo "factorial of $a is: $temp"
+#!/bin/bash
+
+a=CHcheck
+echo "upper:" $a | tr '[:upper:]' '[:lower:]'
+strrev=$(echo "$a" | rev)
+echo $strrev
+
+
+#!/bin/bash
+
+directory="/home/karthigai.r/DevOps_training"
+
+file_list=file_combined.txt
+
+for i in *;
+do
+  if [[ -f "$i" ]];
+  then
+    cat "$i" >> "$file_list"
+  fi
+done 
+testing gfikledlkcfhjalkfhlka
+#!/bin/bash
+
+for (( i=1; i<=10; i++ ))
+do
+  if [ $(( i % 2 )) == 0 ]
+  then
+    echo "its  even:" $i
+  else
+    echo "its odd:" $i
+  fi
+done
+#!/bin/bash
+set -x
+numbers=(-3,-2,-1,0,1,2,3,4)
+
+positive_numbers=()
+
+for i in "${numbers[@]}";
+do
+  if [ "$i" -gt 0 ];
+  then
+    positive_numbers+=("$i")
+  fi
+done
+
+echo "positive_numbers :" "${positive_numbers[@]}"
+#!/bin/bash
+
+a=$1
+b=$2
+
+echo "Add : $(($a + $b))"
+echo 'Sub : $(($a - $b))'
+echo "Mul : $(($a * $b))"
+#!/bin/bash
+
+a=$1
+b=$2
+c=$3
+
+case $c in
+
+ADD) echo "Add : $(($a + $b))";;
+SUB) echo "Sub : $(($a - $b))";;
+*) echo "no proper input provided";;
+
+esac
+#!/bin/bash
+
+a=wow
+if [ "$(echo $a | rev)" == "$a" ]
+then
+  echo $a
+  x="$(echo $a | rev)"
+  echo $x
+  echo "its palindrome"
+else
+  echo "not a palindrone"
+fi
+#!/bin/bash
+
+a=jhanavi.txt
+b=777
+
+if [ -f $a ];
+then
+  chmod $b $a
+  echo "permissions applied"
+else
+  echo "file not available"
+fi
+#!/bin/bash
+a=jhanavi.txt
+
+if [ -f $a ];
+then
+  cp $a /home/karthigai.r/DevOps_training/new_dir/Rajesh.txt
+  cp $a jhanavi.sh
+  rm $a
+  echo "permissions applied"
+else
+  echo "file not available"
+fi
+#!/bin/bash
+a=$1
+prime=true
+
+if [ $a -lt 2 ]
+then
+  echo "not a prime"
+fi
+
+for (( i=2; i<$a; i++ ))
+do 
+  if [ $((a%i)) -eq 0 ]
+  then
+    #echo "not a prime number $a"
+    prime=false
+    break;
+  fi
+done
+echo $prime
+
+if [ "$prime" == "true" ]
+then
+  echo "the number is prime $a"
+else 
+  echo "the number is not a prime $a"
+fi
+#!/bin/bash
+a=$1
+sum=0
+
+#1567 = 1+5+6+7 = 19
+#628 = 6+2+8 = 16
+
+while [ $a -gt 0 ]
+do
+  dig=$((a%10))
+  echo "first digit : $dig"
+  sum=$((sum + dig))
+  echo "first sum :$sum"
+  a=$((a / 10))
+  echo " first quotient: $a"
+done
+echo "total sum of digits: $sum"
