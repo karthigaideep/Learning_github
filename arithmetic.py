@@ -1,6 +1,6 @@
-a = 7
-b = 2
-
+a = 4
+b = 6
+#testing merge conflit resolution
 # addition
 print ('Sum: ', a + b)  
 
@@ -21,5 +21,3 @@ print ('Modulo: ', a % b)
 
 # a to the power b
 print ('Power: ', a ** b)   
-
-#testing the merge conflict resolution
